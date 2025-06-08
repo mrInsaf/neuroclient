@@ -53,7 +53,7 @@ const NeuralNetworkPage = () => {
     } else {
       // Оригинальная логика с API
       try {
-        const response = await fetch("http://localhost:8000/generate_model", {
+        const response = await fetch("${API_CONFIG.BASE_URL}/generate_model", {
           method: "POST",
           headers: { 
             "Content-Type": "application/json" 

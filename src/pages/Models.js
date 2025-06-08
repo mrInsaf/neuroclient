@@ -10,7 +10,7 @@ const Models = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("http://localhost:8000/models");
+        const response = await fetch("${API_CONFIG.BASE_URL}/models");
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -23,7 +23,7 @@ const Models = () => {
           id: model.id,
           name: model.name,
           likes: model.likes,
-          url: `http://localhost:8000/models/${model.id}/download`
+          url: `${API_CONFIG.BASE_URL}/models/${model.id}/download`
         }));
         
         setModels(modelList);
@@ -41,7 +41,7 @@ const Models = () => {
   const likeModel = async (id) => {
     try {
       // Отправляем POST-запрос на бэкенд
-      const response = await fetch(`http://localhost:8000/models/${id}/like`, {
+      const response = await fetch(`${API_CONFIG.BASE_URL}/models/${id}/like`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
