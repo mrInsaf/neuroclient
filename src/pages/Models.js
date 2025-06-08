@@ -10,7 +10,7 @@ const Models = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("${API_CONFIG.BASE_URL}/models");
+        const response = await fetch(`${API_CONFIG.BASE_URL}/models`);
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);

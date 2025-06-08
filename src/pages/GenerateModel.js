@@ -1,6 +1,7 @@
 // src/pages/NeuralNetworkPage.jsx
 import React, { useState, useEffect } from "react";
 import ModelViewer from '../components/ModelViewer';
+import API_CONFIG from "../config";
 
 const NeuralNetworkPage = () => {
   const [input, setInput] = useState("");
@@ -53,7 +54,7 @@ const NeuralNetworkPage = () => {
     } else {
       // Оригинальная логика с API
       try {
-        const response = await fetch("${API_CONFIG.BASE_URL}/generate_model", {
+        const response = await fetch(`${API_CONFIG.BASE_URL}/generate_model`, {
           method: "POST",
           headers: { 
             "Content-Type": "application/json" 
