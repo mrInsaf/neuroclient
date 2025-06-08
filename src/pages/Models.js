@@ -1,6 +1,7 @@
 // src/pages/Models.jsx
 import React, { useState, useEffect } from "react";
 import ModelViewer from "../components/ModelViewer";
+import API_CONFIG from "../config";
 
 const Models = () => {
   const [models, setModels] = useState([]);
